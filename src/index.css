@@ -53,7 +53,7 @@ nav li a {
 	text-decoration: none;
 }
 
-.nav-active {
+a.main-link.active {
 	color: rgb(97, 218, 251);
 	transition: all 0.3s ease-out;
 }

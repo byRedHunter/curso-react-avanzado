@@ -19,12 +19,9 @@ const Navigation = () => {
 						<img src={logo} alt='React Logo' />
 
 						<ul>
-							{routes.map((route) => (
+							{routes.map((route, i) => (
 								<li key={route.to}>
-									<NavLink
-										to={route.to}
-										className={({ isActive }) => (isActive ? 'nav-active' : '')}
-									>
+									<NavLink to={route.to} className='main-link'>
 										{route.name}
 									</NavLink>
 								</li>
