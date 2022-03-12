@@ -57,3 +57,20 @@ nav li a {
 	color: rgb(97, 218, 251);
 	transition: all 0.3s ease-out;
 }
+
+.menu-flex {
+	list-style: none;
+	display: flex;
+	margin: 16px 0;
+	column-gap: 16px;
+}
+.menu-flex a {
+	color: rgb(42, 159, 192);
+	text-decoration: none;
+}
+.menu-flex a:visited {
+	color: rgb(42, 159, 192);
+}
+.menu-flex a.active {
+	color: rgb(97, 218, 251);
+}
