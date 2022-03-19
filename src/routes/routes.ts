@@ -1,5 +1,6 @@
 import { lazy, LazyExoticComponent } from 'react'
 import NoLazy from '../1-lazyload/pages/NoLazy'
+import ShoppingPage from '../2-components-patterns/pages/ShoppingPage'
 
 const LazyLayout = lazy(
 	() =>
@@ -29,5 +30,11 @@ export const routes: Route[] = [
 		path: '/no-lazy', // se agrega /* para manejar el path
 		Component: NoLazy,
 		name: 'NoLazy',
+	},
+	{
+		to: '/pattern-traditional',
+		path: '/pattern-traditional', // se agrega /* para manejar el path
+		Component: ShoppingPage,
+		name: 'Pattern',
 	},
 ]
