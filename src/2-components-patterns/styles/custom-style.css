@@ -1,0 +1,12 @@
+.bg-dark {
+	background: rgb(3, 0, 31);
+}
+.text-white {
+	color: white;
+}
+.custom-image {
+	display: block;
+	width: calc(100% - 20px);
+	margin: 10px auto;
+	border-radius: 8px;
+}

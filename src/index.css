@@ -33,6 +33,9 @@ nav {
 	overflow-y: auto;
 	text-align: center;
 	width: 250px;
+	position: fixed;
+	top: 0;
+	left: 0;
 }
 nav ul {
 	align-items: center;
@@ -73,4 +76,10 @@ a.main-link.active {
 }
 .menu-flex a.active {
 	color: rgb(97, 218, 251);
+}
+
+.custom-buttons button,
+.custom-buttons > div {
+	color: #fff;
+	border-color: #fff;
 }
