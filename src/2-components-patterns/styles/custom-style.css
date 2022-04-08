@@ -10,3 +10,12 @@
 	margin: 10px auto;
 	border-radius: 8px;
 }
+
+.shopping-cart {
+	position: fixed;
+	top: 0;
+	right: 0;
+	width: 150px;
+	height: 100vh;
+	background: #363a45;
+}

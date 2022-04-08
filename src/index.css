@@ -21,9 +21,13 @@ code {
 		monospace;
 }
 
+img {
+	min-height: 230px;
+	max-width: 100%;
+}
+
 .main-layout {
 	display: grid;
-	grid-template-columns: auto 1fr;
 }
 
 nav {

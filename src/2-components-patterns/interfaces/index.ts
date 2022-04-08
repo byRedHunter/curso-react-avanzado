@@ -20,3 +20,12 @@ export interface ProductCardComponents {
 	Image: (Object: PropsImage) => JSX.Element
 	Title: (Object: PropsTitle) => JSX.Element
 }
+
+export interface OnChangeArgs {
+	product: Product
+	count: number
+}
+
+export interface ProductInCart extends Product {
+	count: number
+}
