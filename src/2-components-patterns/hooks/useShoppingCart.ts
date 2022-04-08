@@ -14,27 +14,7 @@ export const useShoppingCart = () => {
 		count: number
 	}) => {
 		setShoppingCart((prev) => {
-			const productInCart: ProductInCart = (prev && prev[product.id]) || {
-				...product,
-				count: 0,
-			}
-
-			if (Math.max(productInCart.count + count, 0) > 0) {
-				productInCart.count += count
-
-				return {
-					...prev,
-					[product.id]: productInCart,
-				}
-			}
-
-			// borrar el producto del carrito
-			const list = { ...prev }
-			delete list[product.id]
-
-			return { ...list }
-
-			/* if (count === 0) {
+			if (count === 0) {
 				const list = { ...prev }
 				delete list[product.id]
 
@@ -44,7 +24,7 @@ export const useShoppingCart = () => {
 			return {
 				...prev,
 				[product.id]: { ...product, count },
-			} */
+			}
 		})
 	}
 
