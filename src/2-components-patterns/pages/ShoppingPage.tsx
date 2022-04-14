@@ -6,14 +6,13 @@ import {
 } from '../components'
 
 import { products } from '../data/products'
-import { useShoppingCart } from '../hooks/useShoppingCart'
 
 import style from '../styles/styles.module.css'
 import '../styles/custom-style.css'
 
-const ShoppingPage = () => {
-	const { shoppingCart, onProductCountChange } = useShoppingCart()
+const product = products[0]
 
+const ShoppingPage = () => {
 	return (
 		<>
 			<section className={style.wrapper}>
@@ -27,47 +26,27 @@ const ShoppingPage = () => {
 						gap: '24px',
 					}}
 				>
-					{products.map((product) => (
-						<ProductCard
-							product={product}
-							className='bg-dark text-white'
-							key={product.id}
-							onChange={onProductCountChange}
-							value={shoppingCart?.[product.id]?.count || 0}
-						>
-							<ProductImage className='custom-image' />
-							<ProductTitle className='text-white' />
-							<ProductButtons className='custom-buttons' />
-						</ProductCard>
-					))}
+					<ProductCard
+						product={product}
+						className='bg-dark text-white'
+						initialValues={{ count: 7, maxCount: 10 }}
+					>
+						{({ reset, increaseBy, isMaxCountReached, count }) => (
+							<>
+								<ProductImage className='custom-image' />
+								<ProductTitle className='text-white' />
+								<ProductButtons className='custom-buttons' />
+								<button onClick={reset}>Reset</button>
+								<button onClick={() => increaseBy(-2)}>-2</button>
+								{!isMaxCountReached && (
+									<button onClick={() => increaseBy(2)}>+2</button>
+								)}
+								<span>{count}</span>
+							</>
+						)}
+					</ProductCard>
 				</div>
 			</section>
-
-			{shoppingCart && Object.values(shoppingCart).length && (
-				<div
-					className='shopping-cart'
-					style={{
-						display: 'flex',
-						flexDirection: 'column',
-						rowGap: '8px',
-						padding: '16px 0',
-					}}
-				>
-					{Object.values(shoppingCart).map((product) => (
-						<ProductCard
-							key={product.id}
-							product={product}
-							className='bg-dark text-white'
-							style={{ width: '80%', margin: '0 auto' }}
-							value={product.count}
-							onChange={onProductCountChange}
-						>
-							<ProductImage style={{ minHeight: 'initial' }} />
-							<ProductButtons className='custom-buttons' />
-						</ProductCard>
-					))}
-				</div>
-			)}
 		</>
 	)
 }
